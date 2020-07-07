@@ -1,0 +1,20 @@
+{
+  "name": "ifioriazure-plugin-apns",
+  "version": "1.0.0",
+  "description": "Extend Custom SAP Fiori Client to use Azure Notification Hubs",
+  "cordova": {
+    "id": "ifioriazure-plugin-apns",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "keywords": [
+    "fiori",
+    "azure",
+    "apns",
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "author": "Nuno Ricardo Morais",
+  "license": "Apache 2.0"
+}

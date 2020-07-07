@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<plugin id="ifioriazure-plugin-apns" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>iFioriAzureAPNS</name>
+    <description>Extend Custom SAP Fiori Client to use Azure Notification Hubs</description>
+    <license>Apache 2.0</license>
+    <author>Nuno Ricardo Morais</author>
+    <keywords>fiori,azure,cordova,apns</keywords>
+    <repo></repo>
+    
+    <dependency id="@sap/kapsel-plugin-apppreferences" />
+    <dependency id="@sap/kapsel-plugin-logon" />
+    <dependency id="@sap/kapsel-plugin-logger" />
+
+    <!-- ios -->
+    <platform name="ios">
+        <js-module name="iFioriAzureAPNS" src="www/iFioriAzureAPNS.js">
+            <runs/>
+            <clobbers target="iFioriAzureAPNS" />
+        </js-module>
+
+        <config-file target="config.xml" parent="/*">
+            <feature name="iFioriAzureAPNS">
+                <param name="ios-package" value="iFioriAzureAPNS" onload="true" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/AppDelegate+iFioriAzureAPNS.h" />
+        <source-file src="src/ios/AppDelegate+iFioriAzureAPNS.m" />
+
+        <header-file src="src/ios/iFioriAzureAPNS.h" />
+        <source-file src="src/ios/iFioriAzureAPNS.m" />
+        
+        <framework src="src/ios/WindowsAzureMessaging.framework" custom="true"/>
+    </platform>
+</plugin>
